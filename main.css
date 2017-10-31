@@ -1,0 +1,61 @@
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  border: solid 1px black;
+}
+
+input {
+  border: solid 1px black;
+}
+
+.divTitle {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: stretch;
+}
+.divGame {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: stretch;
+}
+
+td {
+  border: 2px solid #333;
+  height: 100px;
+  width: 100px;
+  text-align: center;
+  vertical-align: middle;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-size: 70px;
+  cursor: pointer;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+.endgame {
+  display: none;
+  width: 200px;
+  top: 120px;
+  background-color: rgba(205, 133, 63, 0.8);
+  position: absolute;
+  left: 50%;
+  margin-left: -100px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  text-align: center;
+  border-radius: 5px;
+  color: white;
+  font-size: 2em;
+}
