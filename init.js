@@ -16,8 +16,8 @@ var winCombos = [
 //gameCreator
 function Game() {
   var self = this;
-  self.huScore = document.getElementById("huScore").innerText = "0";
-  self.aiScore = document.getElementById("aiScore").innerText = "0";
+  self.huScore = 0;
+  self.aiScore = 0;
   self.startGame = function() {
     document.querySelector(".endgame").style.display = "none";
     origBoard = Array.from(Array(9).keys());
@@ -26,6 +26,12 @@ function Game() {
       cells[i].style.removeProperty("background-color");
       cells[i].addEventListener("click", self.turnClick, false);
     }
+  };
+  self.updateScore = function() {
+    var huScore = document.getElementById("huScore");
+    var aiScore = document.getElementById("aiScore");
+    huScore.innerText = self.huScore;
+    aiScore.innerText = self.aiScore;
   };
   //clicking the tile and running miniMax algorithm
   self.turnClick = function(square) {
@@ -66,12 +72,19 @@ function Game() {
     self.declareWinner(
       gameWon.player == huPlayer ? "You win!" : "AI for the Win."
     );
-    self.aiScore += 1;
   };
   //creating end game Window + Text win or loose! used in checkTie or gameover functions
   self.declareWinner = function(who) {
     document.querySelector(".endgame").style.display = "block";
     document.querySelector(".endgame .text").innerText = who;
+    if (who === "AI for the Win.") {
+      self.aiScore++;
+    } else if ("You win!") {
+      self.huScore++;
+    } else if ("As good as it gets for you puny Human!") {
+      self.huScore++;
+    }
+    self.updateScore();
   };
   //emty all squares
   self.emptySquares = function() {
@@ -89,7 +102,6 @@ function Game() {
         cells[i].removeEventListener("click", self.turnClick, false);
       }
       self.declareWinner("As good as it gets for you puny Human!");
-      self.huScore += 1;
       return true;
     }
     return false;
