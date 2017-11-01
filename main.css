@@ -47,7 +47,7 @@ table {
 .endgame {
   display: none;
   width: 200px;
-  top: 120px;
+  top: 50%;
   background-color: rgba(205, 133, 63, 0.8);
   position: absolute;
   left: 50%;
