@@ -87,7 +87,7 @@ function Game() {
     } else if ("You win!") {
       self.huScore++;
     } else if ("As good as it gets for you puny Human!") {
-      self.huScore++;
+      self.aiScore++;
     }
     self.updateScore();
   };
