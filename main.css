@@ -1,4 +1,4 @@
-html {
+/* html {
   box-sizing: border-box;
 }
 *,
@@ -10,22 +10,25 @@ html {
 
 input {
   border: solid 1px black;
+} */
+h1 {
+  margin: 0;
 }
-
 .divTitle {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   flex-wrap: nowrap;
-  justify-content: flex-start;
-  align-items: center;
+  justify-content: center;
+  align-items: stretch;
   align-content: stretch;
 }
-.divGame {
+
+.gameTable {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   flex-wrap: nowrap;
-  justify-content: flex-start;
-  align-items: center;
+  justify-content: center;
+  align-items: stretch;
   align-content: stretch;
 }
 
@@ -36,7 +39,7 @@ td {
   text-align: center;
   vertical-align: middle;
   font-family: "Comic Sans MS", cursive, sans-serif;
-  font-size: 70px;
+  font-size: 60px;
   cursor: pointer;
 }
 
@@ -47,7 +50,7 @@ table {
 .endgame {
   display: none;
   width: 200px;
-  top: 50%;
+  top: 260px;
   background-color: rgba(205, 133, 63, 0.8);
   position: absolute;
   left: 50%;
@@ -56,6 +59,62 @@ table {
   padding-bottom: 50px;
   text-align: center;
   border-radius: 5px;
+  border-color: black;
   color: white;
   font-size: 2em;
+}
+.title {
+  font-size: 70px;
+  margin: 0;
+}
+.scores {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: stretch;
+  align-content: stretch;
+}
+
+.scrz {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: stretch;
+  align-content: stretch;
+}
+
+.body {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: stretch;
+}
+
+@media (min-width: 635px) {
+  td {
+    border: 2px solid #333;
+    height: 190px;
+    width: 190px;
+    text-align: center;
+    vertical-align: middle;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-size: 100px;
+    cursor: pointer;
+  }
+  .endgame {
+    top: 34%;
+    left: 43%;
+    width: 400px;
+  }
+  h1 {
+    margin: 0;
+    font-size: 70px;
+  }
+}
+.btn {
+  border-color: black;
 }

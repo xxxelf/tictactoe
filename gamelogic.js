@@ -65,19 +65,20 @@ function Game() {
   self.gameOver = function(gameWon) {
     for (var index of winCombos[gameWon.index]) {
       document.getElementById(index).style.backgroundColor =
-        gameWon.player == huPlayer ? "blue" : "yellow";
+        gameWon.player == huPlayer ? "green" : "red";
     }
     for (var i = 0; i < cells.length; i++) {
       cells[i].removeEventListener("click", self.turnClick, false);
     }
-    self.declareWinner(
-      gameWon.player == huPlayer ? "You win!" : "AI for the Win."
-    );
+    self.declareWinner(gameWon.player == huPlayer ? "You win!" : "You Loose");
   };
   //adding player score creating end game Window + Text win or loose! used in checkTie or gameover functions////add eventlistener to restart button
   self.declareWinner = function(who) {
+    // var replay = document.getElementById("replay");
     document.querySelector(".endgame").style.display = "block";
     document.querySelector(".endgame .text").innerText = who;
+    // replay.addEventListener("click", init());
+
     // var replay = document.getElementById("replay");
 
     // replay.addEventListener("click", theGame.startGame());
@@ -102,7 +103,7 @@ function Game() {
   self.checkTie = function() {
     if (self.emptySquares().length == 0) {
       for (var i = 0; i < cells.length; i++) {
-        cells[i].style.backgroundColor = "blue";
+        cells[i].style.backgroundColor = "Purple";
         cells[i].removeEventListener("click", self.turnClick, false);
       }
       self.declareWinner("As good as it gets for you puny Human!");

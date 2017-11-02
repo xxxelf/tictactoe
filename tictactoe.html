@@ -10,7 +10,8 @@
 
 </head>
 
-<body>
+
+<body class=body>
 
     <div>
 
@@ -24,17 +25,12 @@
 
         </div>
 
+
         <div class=divGame>
-            <div>
-                <h1>
-                    You can't win but you can try to tie
-                </h1>
-                <h1 id="huScore">
-                    0
-                </h1>
-            </div>
+
 
             <div class="gameTable">
+
                 <table>
                     <tr>
 
@@ -61,26 +57,48 @@
                     </tr>
                 </table>
             </div>
+
+            <div>
+
+                <div class=scores>
+                    <div class=scrz>
+
+                        <div>
+                            <h1>Tied: </h1>
+                        </div>
+
+
+                        <div>
+                            <h1 id="huScore">0</h1>
+                        </div>
+
+
+                    </div>
+                    <div class=scrz>
+
+                        <div>
+                            <h1>Lost: </h1>
+                        </div>
+
+                        <div>
+                            <h1 id=aiScore>0</h1>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
             <div class="endgame">
                 <div class="text"></div>
 
-                <button id="replay" onClick="init()">Replay</button>
-            </div>
-            <div>
-                <h1>AI Score</h1>
-                <h1 id=aiScore>
-                    0
-                </h1>
+                <button class="btn" onClick="theGame.startGame()">Replay</button>
             </div>
 
         </div>
 
-
+        <script type="text/javascript" src="gamelogic.js"></script>
+        <script type="text/javascript" src="init.js"></script>
     </div>
-
-    <script type="text/javascript" src="gamelogic.js"></script>
-    <script type="text/javascript" src="init.js"></script>
-
 </body>
 
 </html>
