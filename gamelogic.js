@@ -82,7 +82,7 @@ function Game() {
     // var replay = document.getElementById("replay");
 
     // replay.addEventListener("click", theGame.startGame());
-    if (who === "AI for the Win.") {
+    if (who === "You Loose") {
       self.aiScore++;
     } else if ("You win!") {
       self.huScore++;
